@@ -14,8 +14,10 @@ jobs:
       - uses: gradle/actions/setup-gradle@v4
         with:
           gradle-version: 8.7
-      - run: gradle assembleDebug
+      - name: Build
+        working-directory: AetherCam
+        run: gradle assembleDebug
       - uses: actions/upload-artifact@v4
         with:
           name: aethercam-apk
-          path: app/build/outputs/apk/debug/app-debug.apk
+          path: AetherCam/app/build/outputs/apk/debug/app-debug.apk
